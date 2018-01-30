@@ -1,7 +1,6 @@
 import os
 import cv2
 import numpy as np
-import itertools
 from nms import non_max_suppression_fast
 
 def union(a,b):
