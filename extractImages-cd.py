@@ -28,8 +28,8 @@ def getName(path):
 
 def preProcess(image):
     kernel = cv2.getStructuringElement(cv2.MORPH_RECT,(5,5))
-    gray = cv2.dilate(image, kernel, iterations = 1)                    #dilate to remove text
-    gray = cv2.erode(gray, kernel, iterations = 2)                      #erode to restore dilation
+    gray = cv2.dilate(image, kernel, iterations=1)                    #dilate to remove text
+    gray = cv2.erode(gray, kernel, iterations=2)                      #erode to restore dilation
     ret, gray = cv2.threshold(gray, 254, 255, cv2.THRESH_TOZERO)        #change white bg to blk
     ret, gray = cv2.threshold(gray, 0, 255, cv2.THRESH_BINARY_INV)      #invert binary image for easier processing
     #try to fill images rectangles and remove noise
